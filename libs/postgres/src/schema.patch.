@@ -1,0 +1,19 @@
+diff --git a/libs/postgres/src/schema.rs b/libs/postgres/src/schema.rs
+index 88bb89e..bfcf486 100644
+--- a/libs/postgres/src/schema.rs
++++ b/libs/postgres/src/schema.rs
+@@ -22,13 +22,13 @@ diesel::table! {
+ 
+     forecast (id) {
+         id -> Int8,
+         group_id -> Int8,
+         station_id -> Int8,
+         station -> Varchar,
+-        field_ids -> Array<Nullable<Int8>>,
++        field_ids -> Array<Int8>,
+         model_id -> Int8,
+         model -> Varchar,
+         query_timestamp -> Timestamp,
+         time_span_start -> Date,
+         time_span_end -> Date,
+         measurement_rate -> Varchar,

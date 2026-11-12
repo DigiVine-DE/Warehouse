@@ -1,0 +1,5 @@
+wget -O ISO11783_TaskFile_V4-3.xsd https://www.isobus.net/isobus/attachments/files/ISO11783_TaskFile_V4-3.xsd
+wget -O ISO11783_Common_V4-3.xsd https://www.isobus.net/isobus/attachments/files/ISO11783_Common_V4-3.xsd
+xjc -d ../src -p iso11783 ISO11783_TaskFile_V4-3.xsd 
+
+https://blog.viadee.de/java-11-update-jdk-jaxb-und-wie-geht-es-weiter

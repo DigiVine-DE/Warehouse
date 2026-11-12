@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
+<Konfiguration>
+   <Security>
+    <!-- change after installation -->
+    <Parameter name="hashKey">8gf5tzvhk12XYZquioTTmn365</Parameter>
+  </Security>
+  <General>
+    <Parameter name="charset">UTF-8</Parameter>
+  </General>
+  <ISOXML>
+    <Parameter name="taskDataFilename">TASKDATA.xml</Parameter>
+    <Parameter name="isoxmlTaskXsdDatei">WEB-INF/classes/ISO11783_TaskFile_V4-3.xsd</Parameter>
+    <Parameter name="versionMajor">4</Parameter>
+    <Parameter name="versionMinor">3</Parameter>
+    <Parameter name="managementSoftwareManufacturer">GID</Parameter>
+    <Parameter name="managementSoftwareVersion">1</Parameter>
+    <Parameter name="dataTransferOrigin">1</Parameter>
+    <Parameter name="ddiFilename">ddi_2021.csv</Parameter>
+  </ISOXML>
+  <GeoJSON>
+    <Parameter name="geoJsonFilename">TASKDATA.geojson</Parameter>
+  </GeoJSON>
+  <DataWareHouse>
+    <Parameter name="activateDataStorage">true</Parameter>
+    <Parameter name="postTaskHarvestToDoURL">http://digivine1.cs.uni-kl.de:8080/api/v0.3/harvest/task?api-token=all</Parameter>
+    <Parameter name="postTaskHarvestResultURL">http://digivine1.cs.uni-kl.de:8080/api/v0.3/harvest/complete?api-token=all</Parameter>
+    <Parameter name="postTaskSprayToDoURL">http://digivine1.cs.uni-kl.de:8080/api/v0.3/spray/task?api-token=all</Parameter>
+    <Parameter name="postTaskSprayResultURL">http://digivine1.cs.uni-kl.de:8080/api/v0.3/spray/complete?api-token=all</Parameter>
+  </DataWareHouse>
+</Konfiguration>

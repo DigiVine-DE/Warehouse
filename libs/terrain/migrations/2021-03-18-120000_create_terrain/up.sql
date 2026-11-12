@@ -1,0 +1,20 @@
+CREATE EXTENSION IF NOT EXISTS postgis;
+
+CREATE TABLE public.terrain
+(
+    id SERIAL PRIMARY KEY,
+    description VARCHAR NOT NULL,
+    field_id INTEGER
+);
+
+CREATE TABLE public.terrain_point
+(
+  id INTEGER NOT NULL REFERENCES terrain(id),
+  x INTEGER NOT NULL,
+  y INTEGER NOT NULL,
+  lat DOUBLE PRECISION NOT NULL,
+  lon DOUBLE PRECISION NOT NULL,
+  height DOUBLE PRECISION NOT NULL,
+
+  PRIMARY KEY (id, x, y)
+);

@@ -1,0 +1,49 @@
+plugins {
+    id 'war'
+}
+
+sourceCompatibility = 17
+targetCompatibility = sourceCompatibility
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'WebContent/WEB-INF/lib'
+    }
+}
+
+dependencies {
+    implementation name: 'commons-io-2.11.0'
+    implementation name: 'dom4j-1.6.1'
+    implementation name: 'geojson-jackson-1.14'
+    implementation name: 'istack-commons-runtime-4.0.1'
+    implementation name: 'jackson-annotations-2.13.0'
+    implementation name: 'jackson-core-2.13.0'
+    implementation name: 'jackson-databind-2.13.0'
+    implementation name: 'jakarta.activation-2.0.1'
+    implementation name: 'jakarta.xml.bind-api-3.0.1'
+    implementation name: 'javax.servlet-api-4.0.1'
+    implementation name: 'jaxb-core-3.0.2'
+    implementation name: 'jaxb-runtime-3.0.2'
+    implementation name: 'jaxen-1.1.3'
+    implementation name: 'jdom-1.1.3'
+    implementation name: 'log4j-1.2.17'
+    implementation name: 'opencsv-2.4'
+    implementation name: 'txw2-3.0.2'
+    
+    providedCompile 'org.apache.tomcat:tomcat-catalina:10.0.+'
+}
+
+sourceSets {
+    main {
+        java { srcDirs = ['src/isoxml'] }
+    }
+}
+
+war {
+    from('src') {
+        include '**/*.xsd', '**/*.xml', '**/*.dtd'
+        into 'WEB-INF/classes'
+    }
+    webXml = file('WebContent/WEB-INF/web.xml') // copies a file to WEB-INF/web.xml
+}

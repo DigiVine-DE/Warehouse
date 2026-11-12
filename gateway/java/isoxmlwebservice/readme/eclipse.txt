@@ -1,0 +1,9 @@
+if you have Eclipse IDE 2021 or latest version and you want to create new Dynamic Web Project but WebContent is not showing in your project.
+
+then follow this steps while creating the project:
+
+New-->Dynamic Web Project-->give name to your project--->click on next button
+remove src\main\java folder
+And type only src-->click on next button
+rename Content directory as WebContent-->select Generate web.xml deployment descriptor
+finish

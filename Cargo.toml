@@ -1,0 +1,68 @@
+[package]
+name = "digivine-api"
+version = "0.2.0"
+authors = ["Nico Schäfer <nschaefer@cs.uni-kl.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4.*" # Logging
+simplelog = "0.9.0"
+serial_test = "0.5.*"
+
+config = "0.13.3" # Config
+
+serde = { version = "1.0", features = ["derive"] } #(De)Serialization
+serde_json = "1.0.*" # JSON (De)Serialization
+csv = "1.1" # CSV (De)Serialization
+
+thiserror = "1.0.*" # Error handling
+
+chrono = { version = "0.4", features = ["serde"] } # Time
+swagger = "5.0.0-alpha-1"
+async-trait = "0.1.24"
+hyper = {version = "0.13"}
+tokio = { version = "0.2", features = ["full"] }
+geo = "0.23.0"
+geo-types = "=0.7.8"            # newer version requires rust 1.6.3
+diesel = { version = "2.0.*", features = ["r2d2", "postgres"] }
+postgis_diesel = { git = "https://github.com/WeissP/postgis-diesel.git" }
+
+futures = "0.3"
+uuid = "0.8"
+frunk_core = "0.3.1"
+frunk = "0.3.1"
+
+######## Backend #######
+digivine-server = { path = "libs/digivine-api-server", features = ["server","conversion"] }
+digivine-api-ero = { path = "libs/ero" }
+digivine-api-jki-lidar = { path = "libs/jki-lidar" }
+digivine-api-jki-shape = { path = "libs/jki-shape" }
+digivine-api-postgres = { path = "libs/postgres" }
+digivine-api-terrain = { path = "libs/terrain" }
+digivine-api-vivc = { path = "libs/vivc" }
+auth-backend = { path = "libs/auth-backend" }
+diesel_ext = { path = "libs/diesel-ext" }
+macros_lib = { path = "libs/macros_lib" }
+
+[dev-dependencies]
+dotenv = "0.15.0"
+reqwest ={version= "=0.11.14", features = ["json", "blocking"]}
+h2 = "=0.3.15"
+diesel_ext = { path = "libs/diesel-ext", features = ["test-utils"] }
+rand = "0.8.5"
+
+[workspace]
+members = [
+    "libs/ero",
+    "libs/jki-lidar",
+    "libs/jki-shape",
+    "libs/postgres",
+    "libs/terrain",
+    "libs/vivc",
+    "libs/auth-backend",
+    "libs/diesel-ext",
+    "libs/macros_lib"
+]
+

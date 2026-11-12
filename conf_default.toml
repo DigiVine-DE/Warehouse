@@ -1,0 +1,14 @@
+server_addr = "127.0.0.1:8080"
+log_level = "debug"
+
+# Database connection strings
+[db]
+# Use one database for all backends
+global = "postgres://digivine:digivine@localhost/digivine"
+
+# Specify one database for each backend
+# [db.modules]
+# ero = "postgres://digivine:digivine@localhost/digivine_ero"
+# jki_lidar = "postgres://digivine:digivine@localhost/digivine_jki_lidar"
+# jki_shape = "postgres://digivine:digivine@localhost/digivine_jki_shape"
+# wagner = "postgres://digivine:digivine@localhost/digivine_wagner"

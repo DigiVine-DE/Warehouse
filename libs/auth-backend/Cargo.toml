@@ -1,0 +1,24 @@
+[package]
+name = "auth-backend"
+version = "0.2.0"
+authors = ["Nico Schäfer <n_schaefer11@cs.uni-kl.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] } # Time
+diesel = { version = "2.0.*", features = ["postgres","chrono", "r2d2"] } # DB Backend
+diesel_migrations = "2.0.*"
+openssl = "*" # Needed for weird postgres behavior
+openssl-sys = "0.9"
+
+log = "0.4.*" # Logging
+
+thiserror = "1.0.*" # Error handling
+
+digivine-server = { path = "../digivine-api-server", features = [] }
+diesel_ext = {path = "../diesel-ext"}
+
+[dev-dependencies]
+diesel_ext = { path = "../diesel-ext", features = [ "test-utils" ] }

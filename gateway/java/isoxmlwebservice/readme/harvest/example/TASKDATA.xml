@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ISO11783_TaskData VersionMajor="4" VersionMinor="3" ManagementSoftwareManufacturer="GID" ManagementSoftwareVersion="1" DataTransferOrigin="1">
+    <CTR A="CTR1" B="Julius Kühn-Institut"/>
+    <FRM A="FRM1" B="Geilweilerhof"/>
+    <CTP A="CTP1" B="Traube">
+        <CVT A="CVT1" B="Riesling"/>
+    </CTP>
+    <PFD A="PFD1" C="Auf dem Weinberg" D="7668" E="CTR1" F="FRM1" G="CTP1" H="CVT1">
+        <PLN A="1">
+            <LSG A="1">
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+                <PNT A="2" C="49.21543904" D="8.046887683"/>
+                <PNT A="2" C="49.214959859" D="8.046948233"/>
+                <PNT A="2" C="49.214929945" D="8.045897758"/>
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+            </LSG>
+        </PLN>
+    </PFD>
+    <DVC A="DVC1" B="Ero-Harvester" D="A00C8400073FFFC7" F="F9FAFBFCFDFE39" G="FF000000006E65">
+        <DET A="DET1" B="1" C="1" D="Gerät" E="0" F="0">
+			<DOR A="1"/>
+			<DOR A="2"/>
+			<DOR A="3"/>
+			<DOR A="4"/>
+			<DOR A="5"/>
+			<DOR A="101"/>
+			<DOR A="102"/>
+			<DOR A="103"/>
+			<DOR A="104"/>
+			<DOR A="105"/>
+            <DOR A="106"/>
+            <DOR A="107"/>
+            <DOR A="108"/>
+		</DET>
+		<DPD A="1" B="0000" C="1" D="1" E="Tartaric Acid" F="201"/>
+		<DPD A="2" B="0000" C="1" D="1" E="Malic Acid" F="201"/>
+		<DPD A="3" B="0000" C="1" D="1" E="Glucose" F="201"/>
+        <DPD A="4" B="0000" C="1" D="1" E="Fructose" F="201"/>
+        <DPD A="5" B="0000" C="1" D="1" E="Plant Damage" F="207"/>
+		<DPT A="101" B="005A" C="7568" D="Yield Total Mass" E="203"/>
+		<DPT A="102" B="0074" C="5874" D="Total Area" E="204"/>
+		<DPT A="103" B="0075" C="2580" D="Effective Total Distance" E="205"/>
+		<DPT A="104" B="0077" C="95" D="Effective Total Time" E="206"/>
+		<DPT A="105" B="03E9" C="500" D="Average Tartaric Acid" E="201"/>
+		<DPT A="106" B="03EA" C="500" D="Average Malic Acid" E="201"/>
+		<DPT A="107" B="03EB" C="5000" D="Average Glucose" E="201"/>
+		<DPT A="108" B="03EC" C="5000" D="Average Fructose" E="201"/>
+		<DVP A="201" B="0" C="1.0" D="0" E="mg/l"/>
+		<DVP A="202" B="0" C="1.0" D="0"/>
+		<DVP A="203" B="0" C="1.0" D="1" E="kg"/>
+		<DVP A="204" B="0" C="1.0" D="4" E="ha"/>
+		<DVP A="205" B="0" C="1.0" D="2" E="m"/>
+		<DVP A="206" B="0" C="1.0" D="0" E="min"/>
+		<DVP A="207" B="0" C="1.0" D="0" E="percent"/>
+    </DVC>
+    <TSK A="TSK56" B="Harvest" C="CTR1" E="PFD1" G="4"/>
+</ISO11783_TaskData>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- VersionMajor: Major ISOXML Version VersionMinor: Minor ISOXML Version ManagementSoftwareManufacturer: Hersteller 
+     ManagementSoftwareVersion: Version des Hersteller DataTransferOrigin: Art der Software 1 = FMIS -->
+<ISO11783_TaskData VersionMajor="4" VersionMinor="1" ManagementSoftwareManufacturer="GID" ManagementSoftwareVersion="3" DataTransferOrigin="1">
+    <CTR A="CTR1" B="Julius Kühn-Institut"/> <!-- Kunde   A: ID B: Nachname -->
+    <FRM A="FRM1" B="Geilweilerhof" C="CTR1"/> <!-- Betrieb   A: ID B: Name -->
+    <WKR A="WKR1" B="Schmidt"/> <!-- Arbeiter   A: ID B: Name -->
+    <CTP A="CTP1" B="Traube"> <!-- Frucht   A: ID B: Name -->
+        <CVT A="CVT1" B="Riesling"/> <!-- Sorte   A: ID B: Name -->
+    </CTP> 
+    <!-- Feldstück  A: ID B: Nummer C: Name D: Größe in qm E: Referenz Kunde F: Referenz Betrieb G: Referenz Frucht H: Referenz Sorte -->
+    <PFD A="PFD1" C="Geilweilerhof Fläche 1" D="7668" E="CTR1" F="FRM1" G="CTP1" H="CVT1">
+        <PLN A="1"> <!-- Polygon   A: type 1 = Feldstück Grenze -->
+            <LSG A="1">
+                <PNT A="2" C="49.2154039726825" D="8.04585621020482"/> <!-- Punkt   A: Bedeutung C: GPS Nord (WGS 84) D: GPS Ost (WGS 84) -->
+                <PNT A="2" C="49.2154390395688" D="8.04688768287574"/>
+                <PNT A="2" C="49.2149598587152" D="8.04694823343859"/>
+                <PNT A="2" C="49.2149299454852" D="8.04589775815051"/>
+                <PNT A="2" C="49.2154039726825" D="8.04585621020482"/>
+            </LSG>
+        </PLN>
+    </PFD>
+    <!-- Description:
+        The Device XML element describes a complete device, like a machine or sensor system. Each device
+        shall have at least one DeviceElement.-->
+    <!-- Gerät A: ID B: Bezeichner D: Name Gerät F: DeviceStructureLabel G: DeviceLocalizationLabel -->
+    <DVC A="DVC1" B="Inovel-Spritze" D="A00C8400073FFFC7" F="F9FAFBFCFDFE39" G="FF000000006E65"> 
+          <!-- Description:
+              The DeviceElement XML element describes the functional or physical elements of a device. To establish
+              a hierarchical structure of element groups, a DeviceElement shall refer to another DeviceElement or to
+              the device itself.-->
+         <!-- Geräteelement A: ID B: eindeutige Nummer C: 1 = Gerät D: Bezeichner E: 0 -keine Referenz-  F: 0  -keine Referenz- -->
+         <DET A="DET1" B="1" C="1" D="Gerät" E="0" F="0">
+            <!-- Description:
+                 The DeviceObjectReference XML element describes a reference to a DeviceProcessData object or a
+                 DeviceProperty object --> 
+            <!--Gerät A: Referenz DPD/DPT -->
+            <DOR A="1"/> 
+            <DOR A="2"/>
+            <DOR A="3"/>
+            <DOR A="4"/>
+            <DOR A="101"/>
+            <DOR A="102"/>
+            <DOR A="103"/>
+            <DOR A="104"/>
+        </DET>
+        <!-- Description:
+             The DeviceProcessData XML element describes ProcessDataVariable DDIs, supported by the
+             DeviceElement that references this XML element. The DeviceProcessDataProperty attribute options
+             “settable” and “control source” are mutually exclusive, only one of these options may be set in the
+             DeviceProcessDataProperty attribute value. The DeviceProcessDataTriggerMethods attribute specifies
+             the available trigger methods for a ProcessDataVariable DDI.
+        -->
+        <!-- A: eindeutige Nummer B: eindeutige Prozess Data Nummer/DDI C: 1 = default set D: 1 = Zeitintervall E: Bezeichner F: Referenz DVP  -->
+        <DPD A="1" B="0002" C="1" D="1" E="Actual Volume Per Area" F="201"/>
+        <DPD A="2" B="0025" C="1" D="1" E="Actual Volume Per Time" F="202"/>
+        <DPD A="3" B="00C6" C="1" D="1" E="Actual Pump Output Pressure" F="203"/>
+        <DPD A="4" B="018D" C="1" D="1" E="Actual Speed" F="204"/>
+        <!--Description:
+            The DeviceProperty XML element describes a property of a DeviceElement by means of a reference and
+            a value for a DDI. This XML element is part of the device descriptor.  -->
+        <!-- A: eindeutige Nummer B: eindeutige Prozess Data Nummer C: Wert D: Bezeichner E: Referenz DVP  ...-->
+        <DPT A="101" B="0050" C="445" D="Application Total Volume" E="205"/>
+        <DPT A="102" B="0074" C="5874" D="Total Area" E="206"/>
+        <DPT A="103" B="0075" C="2460" D="Effective Total Distance" E="207"/>
+        <DPT A="104" B="0077" C="45" D="Effective Total Time" E="208"/>
+        <!-- Description:
+             The DeviceValuePresentation XML element is used to specify the presentation of the data dictionary
+             entity-defined integer values that are used within a single device. The presentation shall be according
+             to the following formula:
+        -->
+         <!-- A: eindeutige Nummer B: Offset C: Scale D: Nachkommastellen E: Bezeichner -->
+        <DVP A="201" B="0" C="1.0" D="2" E="mm³/m²"/>
+        <DVP A="202" B="0" C="1.0" D="0" E="mm³/s"/>
+        <DVP A="203" B="0" C="1.0" D="0" E="pa"/>
+        <DVP A="204" B="0" C="1.0" D="0" E="mm/s"/>
+        <DVP A="205" B="0" C="1.0" D="0" E="liter"/>
+        <DVP A="206" B="0" C="1.0" D="4" E="ha"/>
+        <DVP A="207" B="0" C="1.0" D="2" E="m"/>
+        <DVP A="208" B="0" C="1.0" D="0" E="min"/>
+    </DVC>
+    <PGP A="PGP1" B="Plant Protection"/>
+    <VPN A="VPN1" B="0" C="1.0" D="3" E="l/ha"/>
+    <VPN A="VPN2" B="0" C="1.0" D="3" E="g/ha"/>
+    <PDT A="PDT1" B="Mospilan" C="PGP1" D="VPN2"/>
+    <PDT A="PDT2" B="Coragen" C="PGP1" D="VPN11"/>
+    <PDT A="PDT100" B="Water" D="VPN1"/>
+    <!-- Description:
+         The Task XML element describes an ISO 11783 task. The task is the central XML element in the data
+         transfer file set. It contains references to various other XML elements to specify and record the
+         allocation of resources and operations. -->
+    <!-- Auftrag   ... G: Status 4 = completed -->
+    <TSK A="TSK1" B="Ernter-Task" C="CTR1" D="FRM1" E="PFD1" F="WKR1" G="4">
+        <TZN A="0">
+            <PDV A="0001" B="375" C="PDT1" D="DET1" E="VPN2"/>
+            <PDV A="0001" B="210" C="PDT2" D="DET1" E="VPN1"/>
+        </TZN> 
+        <!-- Description:
+             Time XML elements are used as embedded lists inside the XML data transfer file set or as a time template
+             specification in the TimeLog XML element. -->
+        <!-- Log A: Dateiname C: Datentyp 1 = Binärdaten -->
+        <TLG A="TLG00001" C="1"/>
+    </TSK>
+</ISO11783_TaskData>

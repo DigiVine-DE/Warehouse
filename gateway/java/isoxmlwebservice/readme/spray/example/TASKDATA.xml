@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ISO11783_TaskData VersionMajor="4" VersionMinor="3" ManagementSoftwareManufacturer="GID" ManagementSoftwareVersion="1" DataTransferOrigin="1">
+    <CTR A="CTR1" B="Julius Kühn-Institut"/>
+    <FRM A="FRM1" B="Geilweilerhof"/>
+    <CTP A="CTP1" B="Traube">
+        <CVT A="CVT1" B="Riesling"/>
+    </CTP>
+    <PFD A="PFD1" C="Auf dem Weinberg" D="7668" E="CTR1" F="FRM1" G="CTP1" H="CVT1">
+        <PLN A="1">
+            <LSG A="1">
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+                <PNT A="2" C="49.215403973" D="8.04585621"/>
+            </LSG>
+        </PLN>
+    </PFD>
+    <DVC A="DVC1" B="Inovel-Spray" D="A00C8400073FFFC7" F="F9FAFBFCFDFE39" G="FF000000006E65">
+        <DET A="DET1" B="1" C="1" D="Gerät" E="0" F="0">
+			<DOR A="1"/> 
+            <DOR A="2"/>
+            <DOR A="3"/>
+            <DOR A="4"/>
+            <DOR A="101"/>
+            <DOR A="102"/>
+            <DOR A="103"/>
+            <DOR A="104"/>
+		</DET>
+		<DPD A="1" B="0002" C="1" D="1" E="Actual Volume Per Area" F="201"/>
+        <DPD A="2" B="0025" C="1" D="1" E="Actual Volume Per Time" F="202"/>
+        <DPD A="3" B="00C6" C="1" D="1" E="Actual Pump Output Pressure" F="203"/>
+        <DPD A="4" B="018D" C="1" D="1" E="Actual Speed" F="204"/>
+        <DPT A="101" B="0050" C="445" D="Application Total Volume" E="205"/>
+        <DPT A="102" B="0074" C="5874" D="Total Area" E="206"/>
+        <DPT A="103" B="0075" C="2460" D="Effective Total Distance" E="207"/>
+        <DPT A="104" B="0077" C="45" D="Effective Total Time" E="208"/>
+		<DVP A="201" B="0" C="1.0" D="2" E="mm³/m²"/>
+        <DVP A="202" B="0" C="1.0" D="0" E="mm³/s"/>
+        <DVP A="203" B="0" C="1.0" D="0" E="pa"/>
+        <DVP A="204" B="0" C="1.0" D="0" E="mm/s"/>
+        <DVP A="205" B="0" C="1.0" D="0" E="liter"/>
+        <DVP A="206" B="0" C="1.0" D="4" E="ha"/>
+        <DVP A="207" B="0" C="1.0" D="2" E="m"/>
+        <DVP A="208" B="0" C="1.0" D="0" E="min"/>
+    </DVC>
+    <PGP A="PGP1" B="Plant Protection"/>
+	<VPN A="VPN1" B="0" C="1.0" D="3" E="l/ha"/>
+	<VPN A="VPN2" B="0" C="1.0" D="3" E="g/ha"/>
+	<PDT A="PDT1" B="Mospilan" C="PGP1" D="VPN2"/>
+	<PDT A="PDT2" B="Coragen" C="PGP1" D="VPN1"/>
+	<PDT A="PDT100" B="Water" D="VPN1"/>
+    <TSK A="TSK56" B="Spray" C="CTR1" E="PFD1" G="4">
+        <TZN A="0">
+			<PDV A="0001" B="375" C="PDT1" D="DET1" E="VPN2"/>
+			<PDV A="0001" B="210" C="PDT2" D="DET1" E="VPN1"/>
+		</TZN>
+    </TSK>
+</ISO11783_TaskData>

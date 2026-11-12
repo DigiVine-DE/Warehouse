@@ -1,0 +1,6 @@
+PATCH http://localhost:8080/api/v0.3/field/167?api-token=all
+Content-Type: application/json
+
+{
+  "name": "Testname"
+}

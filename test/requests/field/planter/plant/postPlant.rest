@@ -1,0 +1,24 @@
+#http://digivine1.cs.uni-kl.de:8080/doc/#api-Default-postPlant
+POST http://localhost:8080/api/v0.3/field/167/planter/1/plant?api-token=all
+Content-Type: application/json
+
+{
+   "type":"Feature",
+   "geometry":{
+      "type":"Point",
+      "coordinates":[
+         8.19906131166667,
+         49.4963674866667
+      ]
+   },
+   "properties":{
+      "import_key":"1-geilweiler_feld1",
+      "timestamp":"2020-05-18T08:26:44.629Z",
+      "height":219903.7,
+      "deviation":24.7858830788818,
+      "speed":0.70561917172421,
+      "plant_distance":1000.0,
+      "row_distance":2000.0,
+      "row_number":0
+   }
+}

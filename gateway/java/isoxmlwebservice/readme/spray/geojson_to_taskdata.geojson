@@ -1,0 +1,40 @@
+{ "type": "Feature",
+      "properties": {
+        "task_id": 56,
+        "task_name": "Ernte",
+        "customer_name": "Julius Kühn-Institut",
+        "farm_name": "Geilweilerhof",
+        "fruit_group_name": "Traube",
+        "fruit_name": "Riesling",
+        "plain_name": "Auf dem Weinberg",
+        "plain_size": 7668,
+        "plant_protection": [
+          {
+            "name": "Mospilan",
+            "amount": 375,
+            "unit": "g/ha"
+          },
+          {
+            "name": "Coragen",
+            "amount": 210,
+            "unit": "l/ha"
+          }
+    ],
+        "application_total_volume": null,
+        "total_area": null,
+        "effective_total_distance": null,
+        "effective_total_time": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [ [8.04585621020482, 49.2154039726825],
+            [8.04688768287574, 49.2154390395688],
+            [8.04694823343859, 49.2149598587152],
+            [8.04589775815051, 49.2149299454852],
+            [8.04585621020482, 49.2154039726825]
+          ]
+        ]
+      }
+}
+

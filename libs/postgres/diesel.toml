@@ -1,0 +1,11 @@
+# For documentation on how to configure this file,
+# see diesel.rs/guides/configuring-diesel-cli
+
+
+
+[print_schema]
+generate_missing_sql_type_definitions = false # prevent generating Geometry type by diesel
+filter = { only_tables = ["forecast", "forecast_measurement","fields","planting_run","plant","quality_measurement", "harvestmeasurement", "harvestcomplete", "harvesttask", "spray_plantprotection", "spraycomplete", "spraytask", "weather_station", "weather_data"] }
+file = "src/schema.rs"
+import_types = ["diesel::sql_types::*", "postgis_diesel::sql_types::*"]
+patch_file = "src/schema.patch."

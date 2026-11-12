@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- VersionMajor: Major ISOXML Version VersionMinor: Minor ISOXML Version ManagementSoftwareManufacturer: Hersteller 
+     ManagementSoftwareVersion: Version des Hersteller DataTransferOrigin: Art der Software 1 = FMIS -->
+<ISO11783_TaskData VersionMajor="4" VersionMinor="1" ManagementSoftwareManufacturer="GID" ManagementSoftwareVersion="3" DataTransferOrigin="1">
+    <CTR A="CTR1" B="Julius Kühn-Institut"/> <!-- Kunde   A: ID B: Nachname -->
+    <FRM A="FRM1" B="Geilweilerhof" C="CTR1"/> <!-- Betrieb   A: ID B: Name -->
+    <WKR A="WKR1" B="Schmidt"/> <!-- Arbeiter   A: ID B: Name -->
+    <CTP A="CTP1" B="Traube"> <!-- Frucht   A: ID B: Name -->
+        <CVT A="CVT1" B="Riesling"/> <!-- Sorte   A: ID B: Name -->
+    </CTP> 
+    <!-- Feldstück  A: ID B: Nummer C: Name D: Größe in qm E: Referenz Kunde F: Referenz Betrieb G: Referenz Frucht H: Referenz Sorte -->
+    <PFD A="PFD1" C="Geilweilerhof Fläche 1" D="0" E="CTR1" F="FRM1" G="CTP1" H="CVT1">
+        <PLN A="1"> <!-- Polygon   A: type 1 = Feldstück Grenze -->
+            <LSG A="1">
+                <PNT A="2" C="49.2154039726825" D="8.04585621020482"/> <!-- Punkt   A: Bedeutung C: GPS Nord (WGS 84) D: GPS Ost (WGS 84) -->
+                <PNT A="2" C="49.2154390395688" D="8.04688768287574"/>
+                <PNT A="2" C="49.2149598587152" D="8.04694823343859"/>
+                <PNT A="2" C="49.2149299454852" D="8.04589775815051"/>
+                <PNT A="2" C="49.2154039726825" D="8.04585621020482"/>
+            </LSG>
+        </PLN>
+    </PFD>
+    <!-- Auftrag   A: ID B: Name C: Referenz Kunde D: Referenz Betrieb E: Referenz Feldstück F: Referenz Arbeiter G: Status 1 = planned -->
+    <TSK A="TSK1" B="Pflanzenschutz-Task" C="CTR1" D="FRM1" E="PFD1" F="WKR1" G="1"> 
+    </TSK>
+</ISO11783_TaskData>

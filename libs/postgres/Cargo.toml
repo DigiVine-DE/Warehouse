@@ -1,0 +1,32 @@
+[package]
+name = "digivine-api-postgres"
+version = "0.2.0"
+authors = ["Manuel Dossinger <dossinger@cs.uni-kl.de>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] } #(De)Serialization
+serde_json = "*"
+chrono = { version = "0.4", features = ["serde"] } # Time
+
+diesel = { version = "2.0.*", features = ["postgres","chrono","serde_json"] } # DB Backend
+diesel_migrations = "2.0.*"
+postgis_diesel = { git = "https://github.com/WeissP/postgis-diesel.git" }
+
+openssl = "*" # Needed for weird postgres behavior
+openssl-sys = "0.9"
+
+log = "0.4.*" # Logging
+frunk_core = "0.3.1"
+frunk = "0.3.1"
+thiserror = "1.0.*" # Error handling
+
+diesel_ext = {path = "../diesel-ext"}
+macros_lib = { path = "../macros_lib" }
+
+[dev-dependencies]
+diesel_ext = { path = "../diesel-ext", features = [ "test-utils" ] }
+rand = "0.8.5"
+serial_test = "0.5.*"

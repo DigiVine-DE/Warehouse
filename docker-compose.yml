@@ -1,0 +1,55 @@
+version: "3"
+services:
+  postgres_persistent:
+    image: "postgis/postgis:12-3.3"
+    container_name: "postgres_persistent"
+    restart: always
+    environment:
+      POSTGRES_USER: digivine
+      POSTGRES_PASSWORD: digivine
+      POSTGRES_DB: digivine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/ # persist data even
+  postgres_temporary:
+    image: "postgis/postgis:12-3.3"
+    container_name: "postgres_temporary"
+    restart: always
+    environment:
+      POSTGRES_USER: digivine
+      POSTGRES_PASSWORD: digivine
+      POSTGRES_DB: digivine
+
+  digivineapi_persistent:
+    container_name: api_server_persistent
+    image: digivine_api
+    restart: always
+    build:
+      context: .
+    ports:
+      - 8081:80
+    environment:
+      URL_ESC: "http:\\/\\/digivine1.cs.uni-kl.de:8081"
+      DIGIVINE_DB_GLOBAL: "postgres://digivine:digivine@postgres_persistent/digivine"
+      ROCKET_ENV: production
+    depends_on:
+      - postgres_persistent
+
+  digivineapi_temporary:
+    container_name: api_server_temporary
+    image: digivine_api
+    restart: always
+    build:
+      context: .
+    ports:
+      - 8080:80
+    environment:
+      URL_ESC: "http:\\/\\/digivine1.cs.uni-kl.de:8080"
+      DIGIVINE_DB_GLOBAL: "postgres://digivine:digivine@postgres_temporary/digivine"
+      ROCKET_ENV: production
+      DIGIVINE_MOCKDATA: 1
+    depends_on:
+      - postgres_temporary
+
+volumes:
+  postgres_data:
+    driver: local
